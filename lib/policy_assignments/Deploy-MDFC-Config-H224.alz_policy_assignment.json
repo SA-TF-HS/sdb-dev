@@ -1,0 +1,103 @@
+{
+  "type": "Microsoft.Authorization/policyAssignments",
+  "apiVersion": "2022-06-01",
+  "name": "Deploy-MDFC-Config-H224",
+  "location": "${default_location}",
+  "dependsOn": [],
+  "identity": {
+    "type": "SystemAssigned"
+  },
+  "properties": {
+    "description": "Derived from platform/alz@2026.11.0 Deploy-MDFC-Config_20240319. Omits continuous export, legacy workspace-dependent Kubernetes deployment and unspecified security contact configuration. Deferred plans are parameterized. Original ALZ name retained; monitoring members remain excluded by local customization.",
+    "displayName": "Deploy Microsoft Defender for Cloud configuration",
+    "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/placeholder/providers/Microsoft.Authorization/policySetDefinitions/Deploy-MDFC-Config_20240319",
+    "enforcementMode": "Default",
+    "nonComplianceMessages": [
+      {
+        "message": "Approved Microsoft Defender for Cloud configuration should be enabled."
+      }
+    ],
+    "parameters": {
+      "ascForAIIsAIPromptEvidenceEnabled": {
+        "value": "false"
+      },
+      "ascForCspmIsAgentlessDiscoveryForKubernetesEnabled": {
+        "value": "false"
+      },
+      "ascForCspmIsAgentlessVmScanningEnabled": {
+        "value": "false"
+      },
+      "ascForCspmIsContainerRegistriesVulnerabilityAssessmentsEnabled": {
+        "value": "false"
+      },
+      "ascForCspmIsEntraPermissionsManagementEnabled": {
+        "value": "false"
+      },
+      "ascForCspmIsSensitiveDataDiscoveryEnabled": {
+        "value": "false"
+      },
+      "ascForServersIsAgentlessVmScanningEnabled": {
+        "value": "false"
+      },
+      "ascForServersIsMdeDesignatedSubscriptionEnabled": {
+        "value": "false"
+      },
+      "ascForStorageIsOnUploadMalwareScanningEnabled": {
+        "value": "false"
+      },
+      "ascForStorageIsSensitiveDataDiscoveryEnabled": {
+        "value": "false"
+      },
+      "enableAscForAI": {
+        "value": "Disabled"
+      },
+      "enableAscForAppServices": {
+        "value": "DeployIfNotExists"
+      },
+      "enableAscForArm": {
+        "value": "Disabled"
+      },
+      "enableAscForContainers": {
+        "value": "Disabled"
+      },
+      "enableAscForCosmosDbs": {
+        "value": "DeployIfNotExists"
+      },
+      "enableAscForCspm": {
+        "value": "DeployIfNotExists"
+      },
+      "enableAscForKeyVault": {
+        "value": "Disabled"
+      },
+      "enableAscForOssDb": {
+        "value": "DeployIfNotExists"
+      },
+      "enableAscForServers": {
+        "value": "DeployIfNotExists"
+      },
+      "enableAscForServersVulnerabilityAssessments": {
+        "value": "DeployIfNotExists"
+      },
+      "enableAscForSql": {
+        "value": "DeployIfNotExists"
+      },
+      "enableAscForSqlOnVm": {
+        "value": "DeployIfNotExists"
+      },
+      "enableAscForStorage": {
+        "value": "DeployIfNotExists"
+      },
+      "enableTvmCheck": {
+        "value": "DeployIfNotExists"
+      },
+      "ascForServersSubPlan": {
+        "value": "P2"
+      },
+      "ascForArmSubPlan": {
+        "value": "PerSubscription"
+      }
+    },
+    "scope": "/providers/Microsoft.Management/managementGroups/placeholder",
+    "notScopes": []
+  }
+}
